@@ -1,115 +1,787 @@
-<!DOCTYPE HTML>
-<!--
-	Hyperspace by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Chris Henyard</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Christopher Henyard | Senior .NET Engineer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Senior Full-Stack .NET Engineer | Architect | Problem Solver - Christopher Henyard" />
 
-		<!-- Sidebar -->
-			<section id="sidebar">
-				<div class="inner">
-					<nav>
-						<ul>
-							<li><a href="#intro">Welcome</a></li>
-							<li><a href="#projects">Projects</a></li>
-						</ul>
-					</nav>
-				</div>
-			</section>
+  <style>
+    :root {
+      --bg: #050816;
+      --bg-alt: #0b1020;
+      --card: #111827;
+      --accent: #38bdf8;
+      --accent-soft: rgba(56, 189, 248, 0.15);
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --border: #1f2937;
+      --radius-lg: 18px;
+      --radius-sm: 10px;
+      --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.45);
+      --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --max-width: 1100px;
+    }
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-				<!-- Intro -->
-					<section id="intro" class="wrapper style1 fullscreen fade-up">
-						<div class="inner">
-							<h1>Chris Henyard</h1>
-							<p>Code in C#</p>
-							<p>Examples for learning</p>
-						</div>
-					</section>
+    body {
+      font-family: var(--font-sans);
+      background: radial-gradient(circle at top, #111827 0, #020617 55%);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.6;
+    }
 
-				<!-- One -->
-					<section id="projects" class="wrapper style2 spotlights">
-						<section>
-							<a href="#" class="image"><img src="images/christina-wocintechchat-com-eF7HN40WbAQ-unsplash.jpg" alt="" data-position="center center" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>Interview Questions</h2>
-									<p>Using Visual Studio 2022 and .Net 6.0</p>
-									<ul class="actions">
-										<li><a href="https://github.com/chrishenyard/InterviewQuestions" target="_blank" class="button">Learn more</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-						<section>
-							<a href="#" class="image"><img src="images/randy-tarampi-fckhR4mysac-unsplash.jpg" alt="" data-position="center center" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>Signal R</h2>
-									<p>A Signal R sports ticker</p>
-									<ul class="actions">
-										<li><a href="https://github.com/chrishenyard/signalr-sports-ticker" target="_blank" class="button">Learn more</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-						<section>
-							<a href="#" class="image"><img src="images/sunder-muthukumaran-qAR2ndjOAsE-unsplash.jpg" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>Windows Serivce Executable Lifetime</h2>
-									<p>How does the lifecycle of a Windows service differ from an executable?</p>
-									<ul class="actions">
-										<li><a href="https://github.com/chrishenyard/service-exe-lifetime" target="_blank" class="button">Learn more</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-						<section>
-							<a href="#" class="image"><img src="images/folu-eludire-O9Epo1PwX5A-unsplash.jpg" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>Windows Games</h2>
-									<p>A traffic game</p>
-									<ul class="actions">
-										<li><a href="https://github.com/chrishenyard/TrafficSignal" target="_blank" class="button">Learn more</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-					</section>
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
 
+    a:hover {
+      text-decoration: underline;
+    }
 
+    /* Layout */
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(14px);
+      background: linear-gradient(to bottom, rgba(15, 23, 42, 0.92), rgba(15, 23, 42, 0.75), transparent);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+    }
+
+    .nav {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.9rem 1.5rem;
+    }
+
+    .nav-title {
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.4rem;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-weight: 500;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), #a855f7);
+      transition: width 0.2s ease-out;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    main {
+      flex: 1;
+    }
+
+    section {
+      padding: 3.5rem 1.5rem;
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    /* Hero */
+    .hero {
+      padding-top: 4.5rem;
+      padding-bottom: 3.5rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1.1fr);
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .hero-kicker {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.4rem, 4vw, 3rem);
+      line-height: 1.1;
+      margin-bottom: 0.6rem;
+    }
+
+    .hero-title-sub {
+      font-size: 1.15rem;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-body {
+      color: var(--muted);
+      max-width: 34rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .tag {
+      font-size: 0.75rem;
+      padding: 0.3rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      color: var(--muted);
+      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.12), transparent 60%);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+
+    .btn-primary, .btn-ghost {
+      border-radius: 999px;
+      font-size: 0.85rem;
+      padding: 0.55rem 1.25rem;
+      font-weight: 500;
+      border: 1px solid transparent;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      cursor: pointer;
+      transition: transform 0.1s ease-out, box-shadow 0.15s ease-out, background 0.15s ease-out, border-color 0.15s ease-out;
+    }
+
+    .btn-primary {
+      background: radial-gradient(circle at top left, #38bdf8, #0ea5e9);
+      color: #0b1120;
+      box-shadow: 0 16px 40px rgba(56, 189, 248, 0.45);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 18px 45px rgba(56, 189, 248, 0.55);
+    }
+
+    .btn-ghost {
+      background: rgba(15, 23, 42, 0.7);
+      color: var(--muted);
+      border-color: rgba(148, 163, 184, 0.45);
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .hero-photo-card {
+      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.2), rgba(15, 23, 42, 0.9));
+      border-radius: 26px;
+      padding: 1.2rem;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .hero-photo {
+      border-radius: 22px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      height: 260px;
+      background: radial-gradient(circle at 20% 0, #38bdf8, #1d4ed8, #020617);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(226, 232, 240, 0.85);
+      font-size: 0.9rem;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .hero-photo small {
+      display: block;
+      color: rgba(148, 163, 184, 0.9);
+      margin-top: 0.3rem;
+      font-size: 0.78rem;
+    }
+
+    .hero-meta {
+      margin-top: 1rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .hero-meta strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    /* Section headings */
+    .section-heading {
+      font-size: 1.6rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .section-subtitle {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-bottom: 1.75rem;
+    }
+
+    /* Goals */
+    .goals-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+      gap: 2rem;
+    }
+
+    .goals-list {
+      list-style: none;
+      display: grid;
+      gap: 0.7rem;
+    }
+
+    .goals-list li {
+      position: relative;
+      padding-left: 1.4rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .goals-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--accent);
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+
+    .goals-note {
+      font-size: 0.9rem;
+      color: var(--muted);
+      border-radius: var(--radius-lg);
+      border: 1px dashed rgba(148, 163, 184, 0.5);
+      padding: 1rem 1.1rem;
+      background: rgba(15, 23, 42, 0.75);
+    }
+
+    /* Tech stack */
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.4rem;
+    }
+
+    .pill {
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      padding: 0.2rem 0.7rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      background: rgba(15, 23, 42, 0.85);
+    }
+
+    .stack-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.4rem;
+    }
+
+    .stack-card {
+      background: rgba(15, 23, 42, 0.92);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      padding: 1rem 1.1rem;
+    }
+
+    .stack-card h3 {
+      font-size: 0.98rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .stack-card p {
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    /* Achievements */
+    .achievements-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .achievement-card {
+      background: radial-gradient(circle at top left, var(--accent-soft), rgba(15, 23, 42, 0.98));
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      padding: 1.2rem 1.3rem;
+    }
+
+    .achievement-title {
+      font-size: 0.98rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+
+    .achievement-body {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    /* Projects */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .project-card {
+      background: rgba(15, 23, 42, 0.95);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      padding: 1.1rem 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .project-title {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .project-meta {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .project-body {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .project-actions {
+      margin-top: 0.6rem;
+    }
+
+    .project-actions a {
+      font-size: 0.83rem;
+      font-weight: 500;
+      padding: 0.4rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      background: rgba(15, 23, 42, 0.9);
+    }
+
+    .project-actions a:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* Contact */
+    .contact-card {
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      background: rgba(15, 23, 42, 0.96);
+      padding: 1.4rem 1.5rem;
+      display: grid;
+      gap: 0.9rem;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1.2fr);
+      gap: 1.5rem;
+    }
+
+    .contact-item {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .contact-label {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+      margin-bottom: 0.25rem;
+    }
+
+    footer {
+      border-top: 1px solid rgba(148, 163, 184, 0.25);
+      padding: 1.5rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    footer .container {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 860px) {
+      .hero-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .goals-grid,
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      header {
+        position: static;
+        background: linear-gradient(to bottom, rgba(15, 23, 42, 0.98), rgba(15, 23, 42, 0.9));
+      }
+
+      .nav {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <nav class="nav">
+        <div class="nav-title">Christopher Henyard</div>
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#stack">Tech Stack</a>
+          <a href="#achievements">Achievements</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Hero / Intro -->
+      <section class="hero" id="about">
+        <div class="container hero-grid">
+          <div>
+            <div class="hero-kicker">Senior Full-Stack .NET Engineer</div>
+            <h1>Hi, I'm <span style="color: var(--accent);">Christopher Henyard</span></h1>
+            <p class="hero-title-sub">
+              Architect · Problem Solver · Builder of high-performance .NET systems.
+            </p>
+            <p class="hero-body">
+              I build high-performance systems, high-scale data pipelines, and secure multi-tenant platforms using modern .NET technologies.
+              My focus is on clean architecture, measurable performance, reliability, and long-term maintainability — especially in contract
+              environments where ownership, delivery speed, and autonomy matter.
+            </p>
+
+            <div class="hero-tags">
+              <span class="tag">ASP.NET Core 7–9</span>
+              <span class="tag">gRPC & REST APIs</span>
+              <span class="tag">Stripe & Wallet Integrations</span>
+              <span class="tag">High-scale Data Pipelines</span>
+              <span class="tag">Multi-tenant Architectures</span>
+            </div>
+
+            <div class="hero-actions">
+              <a class="btn-primary" href="#projects">
+                View Projects →
+              </a>
+              <a class="btn-ghost" href="#contact">
+                Get in touch
+              </a>
+            </div>
+          </div>
+
+          <aside class="hero-photo-card">
+            <div class="hero-photo">
+              <!-- Replace this with your actual image in the repo, e.g. images/profile.jpg -->
+              <div>
+                <img src="/images/profile.jpg" alt="Christopher Henyard" style="width:100%;height:100%;object-fit:cover;border-radius:18px;" />
 			</div>
+            </div>
+            <div class="hero-meta">
+              <strong>Currently focused on:</strong> multi-tenant .NET platforms, Stripe ecosystems, large-scale ingestion pipelines, and
+              building reliable infrastructure on Linux, Docker, and Proxmox.
+            </div>
+          </aside>
+        </div>
+      </section>
 
-		<!-- Footer -->
-			<footer id="footer" class="wrapper style1-alt">
-				<div class="inner">
-					<ul class="menu">
-						<li></li>
-					</ul>
-				</div>
-			</footer>
+      <!-- Goals (from README "My Current Goals") -->
+      <section>
+        <div class="container">
+          <h2 class="section-heading">Current Focus & Goals</h2>
+          <p class="section-subtitle">
+            A quick snapshot of what I'm deliberately improving and building right now.
+          </p>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+          <div class="goals-grid">
+            <ul class="goals-list">
+              <li>Build enterprise-grade .NET platforms that emphasize simplicity and long-term reliability.</li>
+              <li>Deepen expertise in low-level Linux, networking, and virtualization (pfSense/OPNsense, Proxmox).</li>
+              <li>Continue modernizing ecosystems from legacy .NET → ASP.NET Core.</li>
+              <li>Master fully automated deployment ecosystems using Docker and CI/CD.</li>
+              <li>Expand into developer tooling for Stripe, gRPC, and Wallet integrations.</li>
+              <li>Contribute more open-source utilities around performance, data ingestion, and multi-tenant architectures.</li>
+            </ul>
 
-	</body>
+            <div class="goals-note">
+              I enjoy roles where I can own the full stack: from schema design and data pipelines to API boundaries, security, and deployment
+              pipelines — then refine everything with real-world metrics.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tech Stack (from README "Tech Stack & Tools I Use Daily") -->
+      <section id="stack">
+        <div class="container">
+          <h2 class="section-heading">Tech Stack & Tools</h2>
+          <p class="section-subtitle">
+            The tools and platforms I reach for day-to-day when building production systems.
+          </p>
+
+          <div class="stack-grid">
+            <div class="stack-card">
+              <h3>Backend & Architecture</h3>
+              <p>ASP.NET Core 7–9, C#, EF Core 8/9, REST APIs, gRPC, Webhooks, multi-tenant systems, middleware, interceptors, channels, and hosted services.</p>
+            </div>
+            <div class="stack-card">
+              <h3>Payments & Integrations</h3>
+              <p>Stripe (PaymentIntents, Subscriptions, 3DS, SetupIntents, off-session billing, application fees), Apple Wallet (PassKit), Google Wallet Objects API, OAuth 2.0, and HMAC auth patterns.</p>
+            </div>
+            <div class="stack-card">
+              <h3>Data Engineering</h3>
+              <p>SQL Server 2012–2022, performance tuning & indexing, MERGE optimization, large-scale CSV ingestion (7GB–15GB+), ETL pipelines, BCP automation, and streaming architectures.</p>
+            </div>
+            <div class="stack-card">
+              <h3>Cloud, DevOps & Infra</h3>
+              <p>Docker & Docker Compose, Linux server administration, Proxmox virtualization, and secure containerized environments.</p>
+            </div>
+            <div class="stack-card">
+              <h3>Frontend (Minimal but Effective)</h3>
+              <p>JavaScript, Bootstrap 5, jQuery DataTables, dynamic modals and AJAX CRUD — focused on lightweight and maintainable UIs.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Achievements (from README "Highlighted Achievements") -->
+      <section id="achievements">
+        <div class="container">
+          <h2 class="section-heading">Highlighted Achievements</h2>
+          <p class="section-subtitle">
+            Some of the systems and patterns I've delivered that keep showing up in real projects.
+          </p>
+
+          <div class="achievements-grid">
+            <div class="achievement-card">
+              <div class="achievement-title">Multi-tenant Architectures</div>
+              <p class="achievement-body">
+                Designed tenant-aware routing, scoped DbContexts, and middleware-based tenant resolution, enabling clean separation of customer data and behavior in ASP.NET Core platforms.
+              </p>
+            </div>
+            <div class="achievement-card">
+              <div class="achievement-title">Stripe Billing Ecosystems</div>
+              <p class="achievement-body">
+                Implemented full Stripe flows: PaymentIntents, Subscriptions, webhooks, retries, SetupIntents, 3DS, and async processing via Channels + Hosted Services for robust, observable billing.
+              </p>
+            </div>
+            <div class="achievement-card">
+              <div class="achievement-title">Apple Wallet & Google Wallet</div>
+              <p class="achievement-body">
+                Delivered secure, dynamically updating passes for loyalty, membership, and credential systems using Apple Wallet PassKit and Google Wallet Objects.
+              </p>
+            </div>
+            <div class="achievement-card">
+              <div class="achievement-title">High-speed Ingestion Pipelines</div>
+              <p class="achievement-body">
+                Built ingestion paths capable of processing 7–15GB+ CSVs using chunked streaming, dynamic schema handling, and bulk operations into SQL Server.
+              </p>
+            </div>
+            <div class="achievement-card">
+              <div class="achievement-title">Modernized Legacy .NET</div>
+              <p class="achievement-body">
+                Migrated aging .NET Framework systems to ASP.NET Core with significant gains in performance, reliability, and maintainability.
+              </p>
+            </div>
+            <div class="achievement-card">
+              <div class="achievement-title">Admin Systems with Minimal JS</div>
+              <p class="achievement-body">
+                Built admin dashboards using DataTables, Bootstrap 5, and AJAX CRUD — keeping JS thin while still delivering fast, extensible interfaces.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects (from your existing index.html) -->
+      <section id="projects">
+        <div class="container">
+          <h2 class="section-heading">Selected Projects</h2>
+          <p class="section-subtitle">
+            A few repos that show how I approach architecture, performance, and developer experience.
+          </p>
+
+          <div class="projects-grid">
+            <article class="project-card">
+              <div class="project-title">Interview Questions</div>
+              <div class="project-meta">Visual Studio 2022 · .NET 6</div>
+              <p class="project-body">
+                A collection of C# interview-style exercises and examples aimed at helping developers level up through practical problem solving in modern .NET.
+              </p>
+              <div class="project-actions">
+                <a href="https://github.com/chrishenyard/InterviewQuestions" target="_blank" rel="noopener">
+                  View on GitHub →
+                </a>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-title">SignalR Sports Ticker</div>
+              <div class="project-meta">ASP.NET Core · SignalR</div>
+              <p class="project-body">
+                A real-time sports ticker powered by SignalR, demonstrating real-time messaging, connection handling, and lightweight UI updates.
+              </p>
+              <div class="project-actions">
+                <a href="https://github.com/chrishenyard/signalr-sports-ticker" target="_blank" rel="noopener">
+                  View on GitHub →
+                </a>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-title">Service vs Executable Lifetime</div>
+              <div class="project-meta">Windows Services · Diagnostics</div>
+              <p class="project-body">
+                A focused exploration of how Windows services differ from standard executables in lifecycle, shutdown, and hosting semantics.
+              </p>
+              <div class="project-actions">
+                <a href="https://github.com/chrishenyard/service-exe-lifetime" target="_blank" rel="noopener">
+                  View on GitHub →
+                </a>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-title">Traffic Game</div>
+              <div class="project-meta">Windows · Game Development</div>
+              <p class="project-body">
+                A small Windows game centered around traffic and timing — used as a playground for event handling, drawing, and game-loop patterns.
+              </p>
+              <div class="project-actions">
+                <a href="https://github.com/chrishenyard/TrafficSignal" target="_blank" rel="noopener">
+                  View on GitHub →
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact (from README "Connect With Me" & "What You’ll Find in My GitHub") -->
+      <section id="contact">
+        <div class="container">
+          <h2 class="section-heading">Connect & Explore</h2>
+          <p class="section-subtitle">
+            Open to collaboration, consulting, and long-term engagements where ownership and craftsmanship matter.
+          </p>
+
+          <div class="contact-card contact-grid">
+            <div>
+              <div class="contact-item">
+                <div class="contact-label">Connect</div>
+                <p>
+                  <strong>LinkedIn:</strong>
+                  <a href="https://linkedin.com/in/chrishenyard" target="_blank" rel="noopener">linkedin.com/in/chrishenyard</a>
+                </p>
+                <p>
+                  <strong>Portfolio:</strong>
+                  <a href="https://chrishenyard.github.io" target="_blank" rel="noopener">chrishenyard.github.io</a>
+                </p>
+                <p>
+                  <strong>Email:</strong>
+                  <a href="mailto:chenyard@outlook.com">chenyard@outlook.com</a>
+                </p>
+              </div>
+            </div>
+
+            <div>
+              <div class="contact-item">
+                <div class="contact-label">On GitHub you'll find</div>
+                <p>
+                  High-performance data ingestion samples, Stripe workflow utilities, gRPC authentication patterns (API key + HMAC),
+                  SQL tuning examples, modern ASP.NET Core templates, Proxmox / pfSense experiments, and tools for Apple Wallet &
+                  Google Wallet integrations.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div>© <span id="year"></span> Christopher Henyard</div>
+        <div>Built with plain HTML & CSS, deployed via GitHub Pages.</div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Small touch: dynamic year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
 </html>
