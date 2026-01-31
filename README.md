@@ -105,3 +105,5 @@ DataTables + Bootstrap 5 + AJAX CRUD → highly maintainable, fast-to-extend adm
 ---
 
 ### ⭐ *Thanks for stopping by — feel free to explore my work or reach out for collaboration!*
+
+![My GitHub Game](game.gif)
