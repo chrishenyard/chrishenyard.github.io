@@ -4,7 +4,7 @@
 -->
 
 # 👋 Hi, I'm **Christopher Henyard**
-### **Senior Full-Stack .NET Engineer | Architect | Problem Solver**
+### **Principle Software Engineer | Junior AI Engineer | Architect | Problem Solver**
 
 I build high-performance systems, high-scale data pipelines, and secure multi-tenant platforms using modern .NET technologies.
 
