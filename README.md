@@ -4,7 +4,7 @@
 -->
 
 # 👋 Hi, I'm **Christopher Henyard**
-### **Principle Software Engineer | Junior AI Engineer | Architect | Problem Solver**
+### **Principal Software Engineer | Junior AI Engineer | Architect | Problem Solver**
 
 I build high-performance systems, high-scale data pipelines, and secure multi-tenant platforms using modern .NET technologies.
 
